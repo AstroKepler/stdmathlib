@@ -70,3 +70,32 @@ derivative_expr, derivative_value = derivative('x**2 + 3*x + 2', eval_point=2)
 print(derivative_expr)      # Output: 2*x + 3
 print(derivative_value)     # Output: 7
 ```
+
+### `partial_derivative_expression`
+
+Computes the partial derivative of a multivariable function with respect to specified variables.
+
+**Parameters:**
+
+- `expression_str` (str): The multivariable function as a string.
+- `variables` (list of str): List of variable names in the function.
+- `differentiation_vars` (list of str): List of variables to differentiate with respect to.
+- `eval_points` (dict, optional): Dictionary of variable values for evaluation.
+
+**Returns:**
+
+- `derivative_expr`: The symbolic partial derivative expression.
+- `derivative_value` (optional): The numerical value of the derivative at `eval_points`.
+
+**Example Usage:**
+
+```python
+from stdmath import partial_derivative_expression
+
+# Compute ?f/?x
+expression = 'x**2 * y + y**3'
+variables = ['x', 'y']
+differentiation_vars = ['x']
+partial_derivative = partial_derivative_expression(expression, variables, differentiation_vars)
+print(partial_derivative)  # Output: 2*x*y
+```
