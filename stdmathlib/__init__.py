@@ -26,4 +26,5 @@ __all__ = [
     'solve_equation',
     'integrate_expression',
     'partial_derivative_expression',
+    'plot',
 ]
