@@ -6,6 +6,7 @@ A Python library to simplify mathematical computations.
 
 ```bash
 pip install stdmathlib
+```
 
 ## Functions
 
