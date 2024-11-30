@@ -2,6 +2,7 @@ README.md
 pyproject.toml
 stdmathlib/__init__.py
 stdmathlib/algebra.py
+stdmathlib/graph.py
 stdmathlib/integrals.py
 stdmathlib/ode.py
 stdmathlib/pde.py

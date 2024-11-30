@@ -14,6 +14,9 @@ from .pde import (
 from .integrals import (
     integrate_expression,
 )
+from .graph import (
+    plot,
+)
 
 __all__ = [
     'solve_linear',

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: stdmathlib
-Version: 0.1.5
+Version: 0.1.6
 Summary: A library to simplify mathematical computations.
 Author-email: Nicholas Brislane <nicholasbrislane1@gmail.com>
 Project-URL: Homepage, https://github.com/astrokepler/stdmathlib
@@ -111,4 +111,32 @@ variables = ['x', 'y']
 differentiation_vars = ['x']
 partial_derivative = partial_derivative_expression(expression, variables, differentiation_vars)
 print(partial_derivative)  # Output: 2*x*y
+```
+
+## Functions
+
+### `plot`
+
+Plots a mathematical expression using `matplotlib`.
+
+**Parameters:**
+
+- `expression_str` (str): The mathematical expression as a string, e.g., `'sin(x)'`.
+- `var` (str): The variable in the expression (default is `'x'`).
+- `range_start` (float): The start of the range for the variable (default is `-10`).
+- `range_end` (float): The end of the range for the variable (default is `10`).
+- `num_points` (int): The number of points to compute for plotting (default is `1000`).
+
+**Returns:**
+
+- `None`: Displays the plot.
+
+**Example Usage:**
+
+```python
+from stdmath import plot
+import numpy as np
+
+# Plot y = sin(x) from -2? to 2?
+plot('sin(x)', range_start=-2*np.pi, range_end=2*np.pi)
 ```
