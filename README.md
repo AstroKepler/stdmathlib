@@ -29,7 +29,7 @@ Integrates a mathematical expression with respect to a variable.
 **Example Usage:**
 
 ```python
-from stdmath import integrate_expression
+from stdmathlib import integrate_expression
 
 # Indefinite integral
 integral_expr = integrate_expression('x**2')
@@ -59,7 +59,7 @@ Differentiates a mathematical expression with respect to a variable.
 **Example Usage:**
 
 ```python
-from stdmath import derivative
+from stdmathlib import derivative
 
 # Differentiate symbolically
 derivative = derivative('x**2 + 3*x + 2')
@@ -90,7 +90,7 @@ Computes the partial derivative of a multivariable function with respect to spec
 **Example Usage:**
 
 ```python
-from stdmath import partial_derivative_expression
+from stdmathlib import partial_derivative_expression
 
 # Compute ?f/?x
 expression = 'x**2 * y + y**3'
@@ -121,7 +121,7 @@ Plots a mathematical expression using `matplotlib`.
 **Example Usage:**
 
 ```python
-from stdmath import plot
+from stdmathliblib import plot
 import numpy as np
 
 # Plot y = sin(x) from -2? to 2?
