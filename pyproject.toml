@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "stdmathlib"
 version = "0.1.7"
 authors = [
-    { name="Nicholas Brislane", email="nicholasbrislane1@gmail.com" }
+    { name="AstroKepler", email="nicholasbrislane1@gmail.com" }
 ]
 description = "A library to simplify mathematical computations."
 readme = "README.md"
