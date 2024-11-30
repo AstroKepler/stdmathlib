@@ -1,11 +1,20 @@
-# stdmath/graph.py
-
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, lambdify
 from sympy.parsing.sympy_parser import parse_expr
 
-def plot(expression_str, var='x', range_start=-10, range_end=10, num_points=1000):
+def plot(
+    expression_str,
+    var='x',
+    range_start=-10,
+    range_end=10,
+    num_points=1000,
+    title=None,
+    xlabel=None,
+    ylabel=None,
+    line_style='-',
+    color='blue'
+):
     """
     Plots a mathematical expression using matplotlib.
 
@@ -15,6 +24,11 @@ def plot(expression_str, var='x', range_start=-10, range_end=10, num_points=1000
     - range_start (float): The start of the range for the variable (default is -10).
     - range_end (float): The end of the range for the variable (default is 10).
     - num_points (int): The number of points to compute for plotting (default is 1000).
+    - title (str): The title of the plot.
+    - xlabel (str): The label for the x-axis.
+    - ylabel (str): The label for the y-axis.
+    - line_style (str): The line style for the plot (default is '-').
+    - color (str): The color of the plot line (default is 'blue').
 
     Returns:
     - None: Displays the plot.
@@ -36,10 +50,24 @@ def plot(expression_str, var='x', range_start=-10, range_end=10, num_points=1000
 
         # Create the plot
         plt.figure(figsize=(8, 6))
-        plt.plot(x_vals, y_vals, label=f"y = {expression_str}")
-        plt.title(f"Plot of {expression_str}")
-        plt.xlabel(var)
-        plt.ylabel('y')
+        plt.plot(x_vals, y_vals, line_style, color=color, label=f"y = {expression_str}")
+
+        # Set plot title and labels
+        if title is not None:
+            plt.title(title)
+        else:
+            plt.title(f"Plot of {expression_str}")
+
+        if xlabel is not None:
+            plt.xlabel(xlabel)
+        else:
+            plt.xlabel(var)
+
+        if ylabel is not None:
+            plt.ylabel(ylabel)
+        else:
+            plt.ylabel('y')
+
         plt.grid(True)
         plt.legend()
         plt.show()

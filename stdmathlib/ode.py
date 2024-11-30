@@ -1,6 +1,6 @@
 from sympy import symbols, diff, sympify, lambdify
 from sympy.parsing.sympy_parser import parse_expr
-# stdmath/ode.py
+# stdmathlib/ode.py
 
 def derivative(expression_str, var='x', eval_point=None):
     """
