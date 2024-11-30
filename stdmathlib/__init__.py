@@ -8,4 +8,5 @@ __all__ = [
     'quadratic_formula',
     'solve_equation',
     'derivative',
+    'solve_equation',
 ]
