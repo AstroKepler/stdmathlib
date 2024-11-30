@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: stdmathlib
-Version: 0.1.8
+Version: 0.1.10
 Summary: A library to simplify mathematical computations.
 Author-email: AstroKepler <nicholasbrislane1@gmail.com>
 Project-URL: Homepage, https://github.com/astrokepler/stdmathlib
@@ -12,6 +12,7 @@ Description-Content-Type: text/markdown
 Requires-Dist: sympy>=1.0
 Requires-Dist: numpy>=1.18.0
 Requires-Dist: matplotlib>=3.0.0
+Requires-Dist: scipy>=1.4.0
 
 # stdmathlib
 
@@ -115,8 +116,6 @@ partial_derivative = partial_derivative_expression(expression, variables, differ
 print(partial_derivative)  # Output: 2*x*y
 ```
 
-## Functions
-
 ### `plot`
 
 Plots a mathematical expression using `matplotlib`.
@@ -128,6 +127,11 @@ Plots a mathematical expression using `matplotlib`.
 - `range_start` (float): The start of the range for the variable (default is `-10`).
 - `range_end` (float): The end of the range for the variable (default is `10`).
 - `num_points` (int): The number of points to compute for plotting (default is `1000`).
+- `title` (str): The title of the plot.
+- `xlabel` (str): The label for the x-axis.
+- `ylabel` (str): The label for the y-axis.
+- `line_style` (str): The line style for the plot (e.g., `'-'`, `'--'`, `'-.'`, `':'`).
+- `color` (str): The color of the plot line (e.g., `'blue'`, `'red'`, `'#FF5733'`).
 
 **Returns:**
 
@@ -136,9 +140,114 @@ Plots a mathematical expression using `matplotlib`.
 **Example Usage:**
 
 ```python
-from stdmathliblib import plot
+from stdmathlib import plot
 import numpy as np
 
-# Plot y = sin(x) from -2? to 2?
-plot('sin(x)', range_start=-2*np.pi, range_end=2*np.pi)
+# Plot y = sin(x) from -2? to 2? with customizations
+plot(
+    expression_str='sin(x)',
+    range_start=-2 * np.pi,
+    range_end=2 * np.pi,
+    title='Sine Function',
+    xlabel='Angle (radians)',
+    ylabel='Amplitude',
+    line_style='--',
+    color='red'
+)
+```
+
+### `integrate_multivariable_expression`
+
+Computes the multivariable integral of an expression with respect to specified variables.
+
+**Parameters:**
+
+- `expression_str` (str): The mathematical expression as a string.
+- `variables` (list of str): List of variable names to integrate with respect to.
+- `limits` (list of tuples, optional): List of tuples specifying the limits for each variable.
+  Each tuple should be `(variable_name, lower_limit, upper_limit)`.
+
+**Returns:**
+
+- For indefinite integrals: The symbolic integral expression.
+- For definite integrals: The numerical value of the integral.
+
+**Example Usage:**
+
+```python
+from stdmathlib import integrate_multivariable_expression
+
+# Indefinite integral
+integral_expr = integrate_multivariable_expression('x * y', ['x', 'y'])
+print(f"Indefinite integral: {integral_expr} + C")
+
+# Definite integral
+limits = [('x', 0, 1), ('y', 0, 2)]
+integral_value = integrate_multivariable_expression('x * y', ['x', 'y'], limits=limits)
+print(f"Definite integral value: {integral_value}")
+```
+
+### `factorial`
+
+Computes the factorial of a non-negative integer.
+
+**Parameters:**
+
+- `n` (int): The number to compute the factorial of (n ? 0).
+
+**Returns:**
+
+- `int`: The factorial of `n`.
+
+**Example Usage:**
+
+```python
+from stdmathlib import factorial
+
+result = factorial(5)
+print(f"5! = {result}")  # Output: 5! = 120
+```
+
+### `combinations`
+
+Computes the number combinations of two non-negative integers.
+
+**Parameters:**
+
+- `n` (int): The number of items in the set (n ? 0).
+- `r` (int): The number of spots that can be chosen from (n ? r ? 0).
+
+**Returns:**
+
+- `int`: The number of combinations possible given `n` and `r`.
+
+**Example Usage:**
+
+```python
+from stdmathlib import combinations
+
+result = combinations(5, 3)
+print(f"5C3 = {result}")  # Output: 5C3 = 10
+```
+
+### `permutations`
+
+Computes the number of arrangements that `n` can make with the length of `r`, where order is important.
+
+**Parameters:**
+
+- `n` (int): The number of items in the set (n ? 0).
+- `r` (int): the number of selected objects arranged in a certain order (n ? r ? 0).
+
+**Returns:**
+
+- `int`: The number of permutations possible given `n` and `r`.
+
+**Example Usage:**
+
+```python
+from stdmathlib import permutations
+
+result = permutations(5, 3)
+print(f"5P3 = {result}")  # Output: 5P3 = 60
 ```

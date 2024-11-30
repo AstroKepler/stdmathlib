@@ -1,4 +1,4 @@
-# stdmath/algebra.py
+# stdmathlib/algebra.py
 from sympy import symbols, Eq, solve, sympify
 
 def solve_linear(a, b):
