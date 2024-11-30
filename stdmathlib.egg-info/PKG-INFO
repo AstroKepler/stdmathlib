@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: stdmathlib
-Version: 0.1.1
+Version: 0.1.2
 Summary: A library to simplify mathematical computations.
 Author-email: Nicholas Brislane <nicholasbrislane1@gmail.com>
 Project-URL: Homepage, https://github.com/astrokepler/stdmathlib
