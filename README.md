@@ -1,0 +1,2 @@
+# stdmathlib
+Personal python library
