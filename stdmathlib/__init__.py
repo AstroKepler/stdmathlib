@@ -1,6 +1,6 @@
 # stdmath/__init__.py
 
-from .algebra import solve_linear, quadratic_formula
+from .algebra import solve_linear, quadratic_formula, solve_equation
 from .ode import derivative
 
 __all__ = [
