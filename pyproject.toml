@@ -17,5 +17,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+dependencies = [
+    "sympy>=1.0",
+]
+
 [project.urls]
 "Homepage" = "https://github.com/astrokepler/stdmathlib"
