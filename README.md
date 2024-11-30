@@ -39,6 +39,7 @@ print(f"Indefinite integral: {integral_expr} + C")  # Output: x**3/3 + C
 integral_expr, integral_value = integrate_expression('x**2', lower_limit=0, upper_limit=2)
 print(f"Indefinite integral: {integral_expr} + C")          # Output: x**3/3 + C
 print(f"Definite integral from 0 to 2: {integral_value}")  # Output: 2.66666666666667
+```
 
 ### `derivative`
 
@@ -68,3 +69,4 @@ print(derivative)  # Output: 2*x + 3
 derivative_expr, derivative_value = derivative('x**2 + 3*x + 2', eval_point=2)
 print(derivative_expr)      # Output: 2*x + 3
 print(derivative_value)     # Output: 7
+```
